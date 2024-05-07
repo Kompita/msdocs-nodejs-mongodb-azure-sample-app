@@ -20,7 +20,7 @@ async function putKeyVaultSecretInEnvVar() {
 async function getConnectionInfo() {
   if (!process.env.DATABASE_URL) {
 
-    await putKeyVaultSecretInEnvVar();
+    //await putKeyVaultSecretInEnvVar();
 
     // still don't have a database url?
     if(!process.env.DATABASE_URL){
@@ -29,7 +29,7 @@ async function getConnectionInfo() {
   }
 
   // To override the database name, set the DATABASE_NAME environment variable in the .env file
-  const DATABASE_NAME = process.env.DATABASE_NAME || "azure-todo-app";
+  const DATABASE_NAME = process.env.DATABASE_NAME || "test";
 
   return {
     DATABASE_URL: process.env.DATABASE_URL,
